@@ -1,0 +1,6 @@
+node_modules/
+dist/
+employees.db
+employees.db-wal
+employees.db-shm
+*.js.map
