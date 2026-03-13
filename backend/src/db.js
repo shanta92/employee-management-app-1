@@ -5,6 +5,11 @@ const DB_PATH = path.join(__dirname, '..', 'employees.db');
 
 let db;
 
+/**
+ * Returns the SQLite database instance, creating it if necessary.
+ * Initializes the schema on first call.
+ * @returns {import('better-sqlite3').Database} The database instance
+ */
 function getDb() {
   if (!db) {
     db = new Database(DB_PATH);
@@ -14,8 +19,12 @@ function getDb() {
   return db;
 }
 
-function initSchema(db) {
-  db.exec(`
+/**
+ * Creates the employees table if it does not already exist.
+ * @param {import('better-sqlite3').Database} database - The database instance
+ */
+function initSchema(database) {
+  database.exec(`
     CREATE TABLE IF NOT EXISTS employees (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,

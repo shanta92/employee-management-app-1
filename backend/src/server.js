@@ -19,7 +19,10 @@ app.use(limiter);
 
 app.use('/api/employees', employeesRouter);
 
-// health check
+/**
+ * Health check endpoint.
+ * @returns {{ status: string }} JSON object with status 'ok'
+ */
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
 app.use(errorHandler);

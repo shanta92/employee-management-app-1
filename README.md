@@ -57,3 +57,27 @@ The app will open at http://localhost:3000
 | POST | `/api/employees` | Create a new employee |
 | PUT | `/api/employees/:id` | Update an employee |
 | DELETE | `/api/employees/:id` | Delete an employee |
+
+## Testing
+
+### Backend
+
+```bash
+cd backend
+npm test
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm test
+```
+
+## Project Conventions
+
+- **Code Style**: Follow the Airbnb style guide. Use TypeScript for all new files. Prefer async/await over `.then()` chains.
+- **Architecture**: Follow clean architecture. Keep business logic in `/src/domain`, UI components in `/src/components`, and use dependency injection for services.
+- **Testing**: Write unit tests for all business logic using Jest and React Testing Library. Maintain 80% code coverage minimum.
+- **Documentation**: Add JSDoc comments to public functions. Update this README when adding new features.
+- **Security**: Never commit secrets or API keys. Validate all user input. Use parameterized queries for database operations.

@@ -10,6 +10,22 @@ const EMPTY_FORM = {
   hire_date: '',
 };
 
+/**
+ * Modal form component for adding or editing an employee.
+ *
+ * @param {Object} props
+ * @param {Object|null} props.employee - The employee to edit, or null to add a new employee
+ * @param {Function} props.onSubmit - Async callback invoked with form data on submit
+ * @param {Function} props.onCancel - Callback invoked when the form is cancelled
+ * @returns {React.ReactElement} The rendered employee form modal
+ *
+ * @example
+ * <EmployeeForm
+ *   employee={null}
+ *   onSubmit={async (data) => await createEmployee(data)}
+ *   onCancel={() => setShowForm(false)}
+ * />
+ */
 export default function EmployeeForm({ employee, onSubmit, onCancel }) {
   const [form, setForm] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState({});
