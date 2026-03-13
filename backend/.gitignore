@@ -1,0 +1,4 @@
+node_modules/
+employees.db
+employees.db-wal
+employees.db-shm
