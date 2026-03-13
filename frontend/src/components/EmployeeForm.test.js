@@ -13,7 +13,7 @@ describe('EmployeeForm', () => {
 
   it('renders add form when no employee is provided', () => {
     render(<EmployeeForm employee={null} onSubmit={mockOnSubmit} onCancel={mockOnCancel} />);
-    expect(screen.getByText('Add Employee')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /add employee/i })).toBeInTheDocument();
   });
 
   it('renders edit form when employee is provided', () => {
@@ -26,7 +26,7 @@ describe('EmployeeForm', () => {
       hire_date: '2024-01-15',
     };
     render(<EmployeeForm employee={employee} onSubmit={mockOnSubmit} onCancel={mockOnCancel} />);
-    expect(screen.getByText('Edit Employee')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /edit employee/i })).toBeInTheDocument();
     expect(screen.getByDisplayValue('Alice Smith')).toBeInTheDocument();
   });
 
