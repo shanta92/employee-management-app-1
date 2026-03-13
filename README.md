@@ -36,7 +36,7 @@ npm install
 node index.js
 ```
 
-The API will be available at http://localhost:5000
+The API will be available at http://localhost:3001
 
 ### Frontend
 
