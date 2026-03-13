@@ -1,0 +1,7 @@
+node_modules/
+dist/
+coverage/
+employees.db
+employees.db-wal
+employees.db-shm
+*.js.map
